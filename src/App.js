@@ -7,11 +7,11 @@ import { IntlProvider, FormattedMessage } from "react-intl";
 const messages = {
   tr: {
     title: "Merhaba Dünya",
-    description: "3 yeni mesajınız var.",
+    description: "{count} yeni mesajınız var.",
   },
   en: {
     title: "Hello World",
-    description: "You have 3 new messages.",
+    description: "You have {count} new messages.",
   },
 };
 function App() {
@@ -32,7 +32,7 @@ function App() {
         <FormattedMessage id="title" />
         <br />
         <br />
-        <FormattedMessage id="description" />
+        <FormattedMessage id="description" values={{ count: 5 }} />
         <br />
         <br />
         <button onClick={() => setLocale("tr")}>TR</button>
